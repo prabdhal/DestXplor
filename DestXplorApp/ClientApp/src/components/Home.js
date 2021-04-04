@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import HeroSection from './HeroSection';
-import PopularDestinationsSection from './PopularDestinationsSection';
+import PopularDestinationsSection from './Cards';
 
 export class Home extends Component {
   static displayName = Home.name;

@@ -2,10 +2,10 @@
 
 import CardItem from './CardItem';
 
-const PopularDestinationsSection = () => {
+const Cards = () => {
   return (
-    <section className="container-lg p-5">
-      <h2 style={{ textAlign: "center" }}>Explore Some of The Most Popular Destinations</h2>
+    <section className="container-xl py-5">
+      <h2 class="section-header">Explore Some of The Most Popular Destinations</h2>
       <div class="row">
         <CardItem
           colClass="col-md-6"
@@ -41,4 +41,4 @@ const PopularDestinationsSection = () => {
   );
 }
 
-export default PopularDestinationsSection;
+export default Cards;

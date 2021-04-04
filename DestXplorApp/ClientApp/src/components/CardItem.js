@@ -8,17 +8,19 @@ const CardItem = (props) => {
   const colClass = props.colClass ? props.colClass : "col-md-4";
 
   return (
-    <div className={` my-5 ${colClass}`}>
+    <div className={` my-3 ${colClass}`}>
       <Link className="card--item--link" to={props.path}>
-      <div className="card">
-        <figure>
-          <img className="card-img-top" src={props.src} />
-        </figure>
-        <figcaption class="p-2" style={{ minHeight: '60px' }}>
-          <h5>{props.headerText}</h5>
-        </figcaption>
+        <div className="card">
+          <figure className="card--img--wrapper">
+            <img
+              className="card--img"
+              src={props.src} />
+          </figure>
+          <figcaption class="card--caption" style={{ minHeight: '60px' }}>
+            <h5 class="card--caption">{props.headerText}</h5>
+          </figcaption>
         </div>
-        </Link>
+      </Link>
     </div>
   );
 }

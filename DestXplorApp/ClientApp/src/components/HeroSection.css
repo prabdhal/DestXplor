@@ -8,16 +8,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: transparent;
-  color: white;
+  border: 3px solid mintcream !important;
+  background: transparent;
+  color: mintcream;
   font-size: 1.2rem;
-  border: 2px solid white !important;
   font-weight: bold;
   padding: 12px 24px;
   cursor: pointer;
+  transition: all 200ms;
 }
 
 .btn-hero:hover {
-  background-color: white;
-  color: dimgrey;
+  background-color: mintcream;
+  color: black;
+  border: 3px solid transparent !important;
 }
