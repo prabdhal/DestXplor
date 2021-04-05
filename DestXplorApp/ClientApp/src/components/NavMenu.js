@@ -24,23 +24,23 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow transparent" light>
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white transparent bg-dark" light>
           <Container>
-            <NavbarBrand tag={Link} to="/">DestXplor</NavbarBrand>
+            <NavbarBrand className="text-light" tag={Link} to="/">DestXplor</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark mx-2" to="/">Home</NavLink>
+                  <NavLink tag={Link} className="text-light mx-2 hidden-border" to="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark mx-2" to="/about">About Us</NavLink>
+                  <NavLink tag={Link} className="text-light mx-2 hidden-border" to="/about">About Us</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark mx-2" to="/destinations">Destinations</NavLink>
+                  <NavLink tag={Link} className="text-light mx-2 hidden-border" to="/destinations">Destinations</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark mx-2" to="/contact">Contact Us</NavLink>
+                  <NavLink tag={Link} className="text-light mx-2 hidden-border" to="/contact">Contact Us</NavLink>
                 </NavItem>
               </ul>
             </Collapse>

@@ -1,2 +1,12 @@
-﻿body {
+﻿p a {
+  color: #f8f9fa;
+}
+
+p a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+i {
+  cursor: pointer;
 }
