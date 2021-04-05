@@ -23,5 +23,6 @@ html {
 }
 
 .nav-item a:hover {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid goldenrod;
+    color: goldenrod !important;
   }
