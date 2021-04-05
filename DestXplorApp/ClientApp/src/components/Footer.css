@@ -4,6 +4,7 @@
 
 .footer-col {
   width: 25%;
+  margin-bottom: 20px;
 }
 
 .footer-header {
@@ -24,9 +25,9 @@ i {
   cursor: pointer;
 }
 
-  i:hover {
-    color: goldenrod;
-  }
+i:hover {
+  color: goldenrod;
+}
 
 label.input-header {
   font-size: 1.5rem;
@@ -36,14 +37,14 @@ label.input-header {
 }
 
 .subscribe-input {
-  width: 85%;
+  width: 80%;
   padding: 5px;
   border-radius: 5px 0 0 5px;
   background-color: var(--whiteColor);
 }
 
 .subscribe-button {
-  width: 15%;
+  width: 20%;
   border: 0;
   outline: 0;
   padding: 5px;
@@ -57,5 +58,8 @@ label.input-header {
   display: inline-block;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
+  .footer-col {
+    width: 50%;
+  }
 }
