@@ -7,7 +7,10 @@ import Footer from './Footer';
 const Home = () => {
   return(
       <>
-        <HeroSection />
+        <HeroSection
+          src="./images/Home.jpg"
+          showButton={true}
+        />
         <PopularDestinationsSection />
         <Footer />
       </>

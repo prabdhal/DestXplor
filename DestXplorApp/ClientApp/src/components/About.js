@@ -2,12 +2,16 @@
 
 import HeroSection from './HeroSection';
 import Footer from './Footer';
+import AboutDescription from './AboutSection';
 
 const About = () => {
   return (
     <>
-      <HeroSection />
-
+      <HeroSection
+        src="./images/About.jpg"
+        showButton={false}
+      />
+      <AboutDescription />
       <Footer />
     </>
     );

@@ -1,10 +1,17 @@
 ﻿import React from 'react';
 
+import HeroSection from './HeroSection';
+import ContactSection from './ContactSection';
+import Footer from './Footer';
+
 const Contact = () => {
   return (
     <>
-      <HeroSection />
-
+      <HeroSection
+        src="./images/Contact.jpg"
+        hideButton={false}
+      />
+      <ContactSection />
       <Footer />
     </>
   );
