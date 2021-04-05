@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import HeroSection from './HeroSection';
 import PopularDestinationsSection from './Cards';
 import Footer from './Footer';
 
-export class Home extends Component {
-  static displayName = Home.name;
-
-  render () {
-    return (
+const Home = () => {
+  return(
       <>
         <HeroSection />
         <PopularDestinationsSection />
         <Footer />
       </>
     );
-  }
 }
+
+export default Home;
