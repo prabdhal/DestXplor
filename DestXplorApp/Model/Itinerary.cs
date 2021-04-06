@@ -33,6 +33,6 @@ namespace DestXplorApp.Model
 
     public Comment Parent { get; set; }
 
-    public virtual IEnumerable<Comments> comments { get; set; }
+    public virtual IEnumerable<Comment> comments { get; set; }
   }
 }

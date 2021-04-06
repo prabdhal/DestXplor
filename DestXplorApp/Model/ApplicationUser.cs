@@ -2,7 +2,7 @@
 
 namespace DestXplorApp.Model
 {
-  public class ApplicationUser
+  public class ApplicationUser : IdentityUser
   {
     [PersonalData]
     public string FirstName { get; set; }

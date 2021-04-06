@@ -1,4 +1,5 @@
 ﻿using DestXplorApp.Model;
+using DestXplorApp.Models;
 using DestXplorApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

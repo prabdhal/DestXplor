@@ -1,8 +1,10 @@
 using DestXplorApp.BusinessManager;
 using DestXplorApp.BusinessManager.Interfaces;
 using DestXplorApp.Model;
+using DestXplorApp.Models;
 using DestXplorApp.Services;
 using DestXplorApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -25,16 +27,27 @@ namespace DestXplorApp
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(
+          Configuration.GetConnectionString("DevConnection")));
+
+      services.AddDatabaseDeveloperPageExceptionFilter();
+
+      services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+          .AddEntityFrameworkStores<ApplicationDbContext>();
+
+      services.AddAuthentication()
+          .AddIdentityServerJwt();
+
       services.AddControllersWithViews();
 
-      // In production, the React files will be served from this directory
+      services.AddControllersWithViews();
+      services.AddRazorPages();
+
       services.AddSpaStaticFiles(configuration =>
       {
         configuration.RootPath = "ClientApp/build";
       });
-
-      services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
       services.AddScoped<IContactServices, ContactServices>();
       services.AddScoped<IContactBusinessManager, ContactBusinessManager>();
