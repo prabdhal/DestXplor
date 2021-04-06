@@ -7,10 +7,10 @@ const ContactForm = () => {
   const [contactName, setContactName] = useState("");
   const [contactSubject, setContactSubject] = useState("");
   const [contactMessage, setContactMessage] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState(false);
 
   useEffect(() => {
-    setFeedback("");
+    setFeedback(false);
   }, [])
 
   const handleSubmit = e => {
@@ -27,7 +27,7 @@ const ContactForm = () => {
         let newContact = res.data;
         setContactList([...contactList, newContact]);
         clearForm();
-        setFeedback("Thank you, your message has been sent!");
+        setFeedback(true);
       })
       .catch(err => console.log(err));
   }
@@ -48,10 +48,20 @@ const ContactForm = () => {
     setContactMessage(e.target.value);
   }
 
+  const checkFeedback = (feedback) => {
+    if (feedback) {
+      return (
+        <div class="bg-success p-2 mb-3 rounded-top rounded-right rounded-bottom rounded-left">
+          Thank you, your message has been sent!
+        </div>
+      );
+    }
+  }
+
   return (
     <div className="container py-5">
       <h2 className="mb-5">Contact Us</h2>
-      <p className="text-success">{feedback}</p>
+      {checkFeedback(feedback)}
       <form
         className="flex-column"
         id="contactForm"
