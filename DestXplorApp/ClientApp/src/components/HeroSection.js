@@ -18,7 +18,7 @@ const HeroSection = (props) => {
   }
 
   return (
-    <div class="container-hero">
+    <div className="container-hero">
       <img
         className="img-fluid"
         src={props.src}
