@@ -1,4 +1,8 @@
+using DestXplorApp.BusinessManager;
+using DestXplorApp.BusinessManager.Interfaces;
 using DestXplorApp.Model;
+using DestXplorApp.Services;
+using DestXplorApp.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -31,6 +35,9 @@ namespace DestXplorApp
 
       services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+      services.AddScoped<IContactServices, ContactServices>();
+      services.AddScoped<IContactBusinessManager, ContactBusinessManager>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

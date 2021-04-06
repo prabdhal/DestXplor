@@ -12,7 +12,6 @@ const Contact = () => {
         hideButton={false}
       />
       <ContactSection />
-      <Footer />
     </>
   );
 }

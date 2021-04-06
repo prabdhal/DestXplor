@@ -12,7 +12,6 @@ const About = () => {
         showButton={false}
       />
       <AboutDescription />
-      <Footer />
     </>
     );
 }

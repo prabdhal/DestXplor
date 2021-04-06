@@ -12,7 +12,6 @@ const Destinations = () => {
         hideButton={false}
       />
       <DestinationSection />
-      <Footer />
     </>
   );
 }

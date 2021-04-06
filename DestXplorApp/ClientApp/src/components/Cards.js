@@ -11,30 +11,30 @@ const Cards = () => {
           colClass="col-md-6"
           src="./images/img-2.jpg"
           headerText="Come visit the mountains"
-          path="/services"
+          path="/destinations"
         />
         <CardItem
           colClass="col-md-6"
           src="./images/img-3.jpg"
           headerText="Come visit the plains"
-          path="/services"
+          path="/destinations"
         />
         <CardItem
           src="./images/img-4.jpg"
           headerText="Come visit the desert"
-          path="/services"
+          path="/destinations"
         />
         <CardItem
           colClass="col-md-4"
           src="./images/img-5.jpg"
           headerText="Come visit the beautiful city"
-          path="/services"
+          path="/destinations"
         />
         <CardItem
           colClass="col-md-4"
           src="./images/img-6.jpg"
           headerText="Come visit Greece"
-          path="/services"
+          path="/destinations"
         />
       </div>
     </section>

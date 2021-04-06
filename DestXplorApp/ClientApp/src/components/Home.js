@@ -12,7 +12,6 @@ const Home = () => {
           showButton={true}
         />
         <PopularDestinationsSection />
-        <Footer />
       </>
     );
 }
