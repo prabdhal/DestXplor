@@ -1,8 +1,7 @@
 ﻿import React from 'react';
 
-import HeroSection from './HeroSection';
-import DestinationSection from './DestinationSection';
-import Footer from './Footer';
+import HeroSection from '../HeroSection';
+import DestinationSection from './DestinationCards';
 
 const Destinations = () => {
   return (

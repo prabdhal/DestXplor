@@ -1,8 +1,7 @@
 ﻿import React from 'react';
 
-import HeroSection from './HeroSection';
-import ContactSection from './ContactSection';
-import Footer from './Footer';
+import HeroSection from '../HeroSection';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
   return (
@@ -11,7 +10,7 @@ const Contact = () => {
         src="./images/Contact.jpg"
         hideButton={false}
       />
-      <ContactSection />
+      <ContactForm />
     </>
   );
 }

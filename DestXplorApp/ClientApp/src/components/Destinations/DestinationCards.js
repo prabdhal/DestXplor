@@ -1,13 +1,13 @@
 ﻿import React from 'react';
 
-import DestinationCard from './DestinationCard';
+import DestinationCardItem from './DestinationCardItem';
 
-const DestinationSection = () => {
+const DestinationCards = () => {
   return (
     <div class="container py-5">
       <h2 className="mb-5">Check Out These Destinations</h2>
       <div className="container my-2">
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-7.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -17,7 +17,7 @@ const DestinationSection = () => {
           remaining essentially unchanged. It was popularised in the 1960s with the release of 
           Letraset sheets containing Lorem Ipsum passages."
         />
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-8.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -27,7 +27,7 @@ const DestinationSection = () => {
           remaining essentially unchanged. It was popularised in the 1960s with the release of 
           Letraset sheets containing Lorem Ipsum passages."
         />
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-9.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -37,7 +37,7 @@ const DestinationSection = () => {
           remaining essentially unchanged. It was popularised in the 1960s with the release of 
           Letraset sheets containing Lorem Ipsum passages."
         />
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-10.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -47,7 +47,7 @@ const DestinationSection = () => {
           remaining essentially unchanged. It was popularised in the 1960s with the release of 
           Letraset sheets containing Lorem Ipsum passages."
         />
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-11.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -57,7 +57,7 @@ const DestinationSection = () => {
           remaining essentially unchanged. It was popularised in the 1960s with the release of 
           Letraset sheets containing Lorem Ipsum passages."
         />
-        <DestinationCard
+        <DestinationCardItem
           src="./images/img-12.jpg"
           destinationTitle="Destination 1"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -72,4 +72,4 @@ const DestinationSection = () => {
   );
 }
 
-export default DestinationSection;
+export default DestinationCards;

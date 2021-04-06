@@ -1,0 +1,24 @@
+﻿
+### Purpose of website ###
+Users can create an account and post some destinations to travel
+Users can view recommended destinations to travel to
+Users can 
+
+// Create Admin account
+
+// Add contact message inbox for admin account
+Create Contact mode for contact form
+Create Web API for GET, POST and DELETE contact form messages
+
+// Allow admin to post destinations for users to view
+Create Destination Model using 'Destination Information Form' below for column names
+Create Web API for Destination model 
+GET, POST, EDIT and DELETE operations needed
+
+
+// Destination Information Form
+- Title of destination
+- Description of destination
+- Price esimation of destination
+- Tags of acitivty at destination (#Water, #Hiking, #Food, #Scenic)
+- URL of destination booking

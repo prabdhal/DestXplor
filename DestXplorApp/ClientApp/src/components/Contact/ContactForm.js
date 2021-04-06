@@ -1,6 +1,14 @@
-﻿import React from 'react';
+﻿import React, { useState, useEffect } from 'react';
 
-const ContactSection = () => {
+import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
+
+const ContactForm = () => {
+
+
+  useEffect(() => {
+    createAPIEndpoint(ENDPOINTS.CONTACT);
+  }, [])
+
   return (
     <div class="container py-5">
       <h2 className="mb-5">Contact Us</h2>
@@ -28,4 +36,4 @@ const ContactSection = () => {
   );
 }
 
-export default ContactSection;
+export default ContactForm;

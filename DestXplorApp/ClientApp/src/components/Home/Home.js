@@ -1,8 +1,7 @@
 import React from 'react';
 
-import HeroSection from './HeroSection';
-import PopularDestinationsSection from './Cards';
-import Footer from './Footer';
+import HeroSection from '../HeroSection';
+import Cards from './Cards';
 
 const Home = () => {
   return(
@@ -11,7 +10,7 @@ const Home = () => {
           src="./images/Home.jpg"
           showButton={true}
         />
-        <PopularDestinationsSection />
+        <Cards />
       </>
     );
 }

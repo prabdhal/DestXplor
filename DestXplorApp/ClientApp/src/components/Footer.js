@@ -6,11 +6,11 @@ import './Footer.css';
 const Footer = () => {
 
   return (
-    <footer class="container-fluid bg-dark py-5">
+    <footer className="container-fluid bg-dark py-5">
       <div className="container py-3">
         <form className="row mx-auto" style={{ maxWidth: "500px" }}>
           <label className="input-header mb-3">Subscribe to our weekly newletter!</label>
-          <span class="input-button-container">
+          <span className="input-button-container">
             <input type="text" className="subscribe-input" placeholder="Email" />
             <button className="subscribe-button">Sign up</button>
           </span>
