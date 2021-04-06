@@ -1,10 +1,14 @@
-﻿using DestXplorApp.Model;
+﻿using DestXplor.Models;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DestXplorApp.Models
+namespace DestXplor.Data
 {
   public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
   {
@@ -13,8 +17,5 @@ namespace DestXplorApp.Models
         IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
     {
     }
-
-    public DbSet<Contact> Contacts { get; set; }
-    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
   }
 }

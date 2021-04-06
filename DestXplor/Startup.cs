@@ -1,19 +1,18 @@
-using DestXplorApp.BusinessManager;
-using DestXplorApp.BusinessManager.Interfaces;
-using DestXplorApp.Model;
-using DestXplorApp.Models;
-using DestXplorApp.Services;
-using DestXplorApp.Services.Interfaces;
+using DestXplor.Data;
+using DestXplor.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DestXplorApp
+namespace DestXplor
 {
   public class Startup
   {
@@ -28,8 +27,8 @@ namespace DestXplorApp
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(
-          Configuration.GetConnectionString("DevConnection")));
+          options.UseSqlServer(
+              Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -45,13 +44,11 @@ namespace DestXplorApp
       services.AddControllersWithViews();
       services.AddRazorPages();
 
+      // In production, the React files will be served from this directory
       services.AddSpaStaticFiles(configuration =>
       {
         configuration.RootPath = "ClientApp/build";
       });
-
-      services.AddScoped<IContactServices, ContactServices>();
-      services.AddScoped<IContactBusinessManager, ContactBusinessManager>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 
-import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
+import { createAPIEndpoint, ENDPOINTS } from '../../api/api';
 
 import ContactMessage from './ContactMessage';
 
