@@ -1,6 +1,6 @@
 using DestXplorApp.BusinessManager;
 using DestXplorApp.BusinessManager.Interfaces;
-using DestXplorApp.Model;
+using DestXplorApp.Models;
 using DestXplorApp.Services;
 using DestXplorApp.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -25,16 +25,21 @@ namespace DestXplorApp
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddControllersWithViews();
+      services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(
+          Configuration.GetConnectionString("DevConnection")));
 
-      // In production, the React files will be served from this directory
+      services.AddDatabaseDeveloperPageExceptionFilter();
+
+      services.AddAuthentication();
+
+      services.AddControllersWithViews();
+      services.AddRazorPages();
+
       services.AddSpaStaticFiles(configuration =>
       {
         configuration.RootPath = "ClientApp/build";
       });
-
-      services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
       services.AddScoped<IContactServices, ContactServices>();
       services.AddScoped<IContactBusinessManager, ContactBusinessManager>();
@@ -46,6 +51,7 @@ namespace DestXplorApp
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
+        app.UseMigrationsEndPoint();
       }
       else
       {
@@ -60,11 +66,14 @@ namespace DestXplorApp
 
       app.UseRouting();
 
+      app.UseAuthentication();
+      app.UseAuthorization();
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapControllerRoute(
                   name: "default",
                   pattern: "{controller}/{action=Index}/{id?}");
+        endpoints.MapRazorPages();
       });
 
       app.UseSpa(spa =>

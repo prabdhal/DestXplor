@@ -2,7 +2,7 @@
 
 const Article = (props) => {
   return (
-    <article className="container py-5">
+    <article className="container pb-5">
       <h2 className="mb-5">{ props.title}</h2>
       <div className="row">
         <p className="col-8">
@@ -14,6 +14,6 @@ const Article = (props) => {
        </div>
     </article>
   );
-      }
+}
 
 export default Article;

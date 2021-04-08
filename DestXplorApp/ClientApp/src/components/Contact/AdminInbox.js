@@ -5,8 +5,8 @@ import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
 import ContactMessage from './ContactMessage';
 
 const AdminInbox = () => {
-  const [contactList, setContactList] = useState([]);
 
+  const [contactList, setContactList] = useState([]);
 
   useEffect(() => {
     createAPIEndpoint(ENDPOINTS.CONTACT).fetchAll()
@@ -20,34 +20,22 @@ const AdminInbox = () => {
         setContactList(contactList);
       })
       .catch(err => console.log(err));
-  }, [contactList], [])
-
-  const deleteMessage = id => {
-    createAPIEndpoint(ENDPOINTS.CONTACT).delete(id)
-      .then(res => {
-        setContactList(res.data);
-      })
-      .catch(err => console.log(err));
-  }
+  }, [])
 
   return (
     <div className="container py-5">
       <h2 className="mb-5">Inbox</h2>
       <div className="row">
-        {
-          contactList.map(c => {
-            return (
-              <ContactMessage
-                key={c.id}
-                id={c.id}
-                name={c.name}
-                subject={c.subject}
-                message={c.message}
-                deleteMessage={deleteMessage}
-              />
-            );
-          })
-        }
+        {contactList.map(c => {
+          return (
+            <ContactMessage
+              key={c.id}
+              name={c.name}
+              subject={c.subject}
+              message={c.message}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import DestinationCardItem from './DestinationCardItem';
 
 const DestinationCards = () => {
   return (
-    <div class="container py-5">
+    <div class="container pb-5">
       <h2 className="mb-5">Check Out These Destinations</h2>
       <div className="container my-2">
         <DestinationCardItem

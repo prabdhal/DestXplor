@@ -16,15 +16,13 @@ const HeroSection = (props) => {
       return ``;
     }
   }
-
+    
   return (
-    <div className="container-hero">
-      <img
-        className="img-fluid"
-        src={props.src}
-        alt="hero image" />
+    <header class="masthead" style={{ backgroundImage: `url(${props.src})` }} >
+      <div class="overlay"></div>
       {showButton(props.showButton)}
-    </div>
+      <div class="filler"></div>
+    </header>
   );
 }
 
