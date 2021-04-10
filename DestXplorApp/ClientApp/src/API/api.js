@@ -1,6 +1,6 @@
 ﻿import axios from 'axios';
 
-const BASE_URL = "https://destxplore.azurewebsites.net/api/"
+const BASE_URL = "https://destxplor.azurewebsites.net/api/"
 
 export const ENDPOINTS = {
   CONTACT: 'Contact'

@@ -48,6 +48,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="container text-white">
+        <p className="text-center">&copy; DestXplor {new Date().getFullYear()}</p>  
+      </div>
     </footer>
   );
 }
