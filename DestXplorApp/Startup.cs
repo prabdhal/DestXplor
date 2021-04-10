@@ -3,6 +3,7 @@ using DestXplorApp.BusinessManager.Interfaces;
 using DestXplorApp.Models;
 using DestXplorApp.Services;
 using DestXplorApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -32,6 +33,21 @@ namespace DestXplorApp
       services.AddDatabaseDeveloperPageExceptionFilter();
 
       services.AddAuthentication();
+
+      services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(
+          Configuration.GetConnectionString("DevConnection")));
+
+      services.AddDatabaseDeveloperPageExceptionFilter();
+
+      services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+          .AddEntityFrameworkStores<ApplicationDbContext>();
+
+      services.AddIdentityServer()
+          .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+
+      services.AddAuthentication()
+          .AddIdentityServerJwt();
 
       services.AddControllersWithViews();
       services.AddRazorPages();
