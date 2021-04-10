@@ -51,7 +51,7 @@ const ContactForm = () => {
   const checkFeedback = (feedback) => {
     if (feedback) {
       return (
-        <div class="bg-success p-2 mb-3 rounded-top rounded-right rounded-bottom rounded-left">
+        <div className="bg-success p-2 mb-3 rounded-top rounded-right rounded-bottom rounded-left">
           Thank you, your message has been sent!
         </div>
       );
@@ -59,7 +59,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div class="container pb-5">
+    <div className="container pb-5">
       <h2 className="mb-5">Contact Us</h2>
       {checkFeedback(feedback)}
       <form
@@ -68,34 +68,32 @@ const ContactForm = () => {
         style={{ maxWidth: "700px" }}
         onSubmit={handleSubmit}
       >
-        <div className="flex-column" style={{ maxWidth: "700px" }}>
-          <div className="form-group">
-            <input
-              className="form-control"
-              placeholder="Name"
-              onChange={handleNameChange}
-              required />
-          </div>
-          <div className="form-group">
-            <input
-              className="form-control"
-              placeholder="Subject"
-              onChange={handleSubjectChange}
-              required />
-          </div>
-          <div className="form-group">
-            <textarea
-              className="form-control"
-              placeholder="Message"
-              onChange={handleMessageChange}
-              style={{ resize: "none" }}
-              rows={5}
-              required>
-            </textarea>
-          </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Name"
+            onChange={handleNameChange}
+            required />
+        </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Subject"
+            onChange={handleSubjectChange}
+            required />
+        </div>
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            placeholder="Message"
+            onChange={handleMessageChange}
+            style={{ resize: "none" }}
+            rows={5}
+            required>
+          </textarea>
+        </div>
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>

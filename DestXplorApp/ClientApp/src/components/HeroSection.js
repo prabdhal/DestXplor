@@ -18,10 +18,10 @@ const HeroSection = (props) => {
   }
     
   return (
-    <header class="masthead" style={{ backgroundImage: `url(${props.src})` }} >
-      <div class="overlay"></div>
+    <header className="masthead" style={{ backgroundImage: `url(${props.src})` }} >
+      <div className="overlay"></div>
       {showButton(props.showButton)}
-      <div class="filler"></div>
+      <div className="filler"></div>
     </header>
   );
 }

@@ -16,8 +16,8 @@ const CardItem = (props) => {
               className="card--img"
               src={props.src} />
           </figure>
-          <figcaption class="card--caption" style={{ minHeight: '60px' }}>
-            <h5 class="card--caption">{props.headerText}</h5>
+          <figcaption className="card--caption" style={{ minHeight: '60px' }}>
+            <h5 className="card--caption">{props.headerText}</h5>
           </figcaption>
         </div>
       </Link>

@@ -4,9 +4,9 @@ import CardItem from './CardItem';
 
 const Cards = () => {
   return (
-    <section className="container-xl py-5">
-      <h2 class="section-header">Explore Some of The Most Popular Destinations</h2>
-      <div class="row">
+    <section className="container-xl pb-5">
+      <h2 className="section-header">Explore Some of The Most Popular Destinations</h2>
+      <div className="row">
         <CardItem
           colClass="col-md-6"
           src="./images/img-2.jpg"
