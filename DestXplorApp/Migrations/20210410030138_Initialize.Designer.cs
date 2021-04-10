@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DestXplorApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210410001055_Initialize")]
+    [Migration("20210410030138_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 
-import { createAPIEndpoint, ENDPOINTS } from '../../api/api';
+import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
 
 const ContactForm = () => {
   const [contactList, setContactList] = useState([]);
@@ -52,16 +52,6 @@ const ContactForm = () => {
     if (feedback) {
       return (
         <div className="bg-success p-2 mb-3 rounded-top rounded-right rounded-bottom rounded-left">
-          Thank you, your message has been sent!
-        </div>
-      );
-    }
-  }
-
-  const checkFeedback = (feedback) => {
-    if (feedback) {
-      return (
-        <div class="bg-success p-2 mb-3 rounded-top rounded-right rounded-bottom rounded-left">
           Thank you, your message has been sent!
         </div>
       );
