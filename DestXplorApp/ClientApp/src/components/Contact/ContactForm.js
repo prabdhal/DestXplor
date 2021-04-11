@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
-import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
+import { createContactAPIEndpoint } from '../../API/api';
 
 const ContactForm = () => {
   const [contactList, setContactList] = useState([]);
@@ -9,7 +9,7 @@ const ContactForm = () => {
   const [contactSubject, setContactSubject] = useState("");
   const [contactMessage, setContactMessage] = useState("");
   const [feedback, setFeedback] = useState("");
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     setFeedback(false);
@@ -24,7 +24,7 @@ const ContactForm = () => {
       message: contactMessage,
     };
 
-    createAPIEndpoint(ENDPOINTS.CONTACT).create(contactForm)
+    createContactAPIEndpoint(false).create(contactForm)
       .then(res => {
         let newContact = res.data;
         setContactList([...contactList, newContact]);
@@ -90,7 +90,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <div class="container my-5">
+      <div className="container my-5">
         <h4 className="mb-4">Leave us a message</h4>
         {checkFeedback(feedback)}
         <form

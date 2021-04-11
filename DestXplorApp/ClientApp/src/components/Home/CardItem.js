@@ -14,6 +14,7 @@ const CardItem = (props) => {
           <figure className="card--img--wrapper">
             <img
               className="card--img"
+              alt={props.src}
               src={props.src} />
           </figure>
           <figcaption className="card--caption" style={{ minHeight: '60px' }}>

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 
-import { createAPIEndpoint, ENDPOINTS } from '../../API/api';
+import { createContactAPIEndpoint } from '../../API/api';
 
 import ContactMessage from './ContactMessage';
 
@@ -9,8 +9,13 @@ const AdminInbox = () => {
 
 
   useEffect(() => {
-    createAPIEndpoint(ENDPOINTS.CONTACT).fetchAll()
+    getAllMessages(false);
+  }, [])
+
+  const getAllMessages = (productionUrl) => {
+    createContactAPIEndpoint(productionUrl).fetchAll()
       .then(res => {
+        console.log(res.data);
         let contactList = res.data.map(contact => ({
           id: contact.id,
           name: contact.name,
@@ -20,10 +25,10 @@ const AdminInbox = () => {
         setContactList(contactList);
       })
       .catch(err => console.log(err));
-  }, [contactList], [])
+  } 
 
   const deleteMessage = id => {
-    createAPIEndpoint(ENDPOINTS.CONTACT).delete(id)
+    createContactAPIEndpoint(false).delete(id)
       .then(res => {
         setContactList(res.data);
       })
